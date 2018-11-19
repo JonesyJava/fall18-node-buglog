@@ -41,7 +41,7 @@ server.delete('/api/bugs/:id', (request, response, next) => {
     const bug = _bugs[i];
     if (bug._id == id) {
       _bugs.splice(i, 1)
-      response.send({
+      return response.send({
         message: "Successfully removed bug"
       })
     }
